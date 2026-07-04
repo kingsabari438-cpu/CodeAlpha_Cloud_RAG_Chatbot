@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudRAG Study Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>CloudRAG Study Assistant</h1>
+        <p class="subtitle">AI + Cloud based RAG Document Assistant</p>
+
+        <div class="card">
+            <h2>Backend Status</h2>
+            <p id="status">Checking backend...</p>
+            <button onclick="checkBackend()">Check Backend</button>
+        </div>
+
+        <div class="card">
+            <h2>Upload PDF</h2>
+            <input type="file" id="pdfFile" accept=".pdf">
+            <button onclick="uploadPDF()">Upload PDF</button>
+
+            <h3>PDF Preview</h3>
+            <pre id="pdfPreview">No PDF uploaded yet.</pre>
+        </div>
+
+        <div class="card">
+            <h2>Ask Question</h2>
+            <input type="text" id="questionInput" placeholder="Ask question from your notes...">
+            <button onclick="askAI()">Ask AI</button>
+
+            <h3>AI Answer</h3>
+            <pre id="aiAnswer">Upload PDF first, then ask a question.</pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
