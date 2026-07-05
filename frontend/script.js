@@ -1,8 +1,12 @@
+// Render backend URL inga paste pannu
+// Example: const BACKEND_URL = "https://cloudrag-backend.onrender.com";
+const BACKEND_URL = " https://cloudrag-backend-kp9s.onrender.com";
+
 async function checkBackend() {
     const statusText = document.getElementById("status");
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/health");
+        const response = await fetch(`${BACKEND_URL}/health`);
         const data = await response.json();
 
         statusText.innerText = "Backend connected ✅ " + data.project;
@@ -18,8 +22,6 @@ async function uploadPDF() {
     const fileInput = document.getElementById("pdfFile");
     const previewBox = document.getElementById("pdfPreview");
 
-    previewBox.innerText = "Button clicked ✅";
-
     if (fileInput.files.length === 0) {
         previewBox.innerText = "Please select a PDF file first.";
         return;
@@ -31,7 +33,7 @@ async function uploadPDF() {
     previewBox.innerText = "Uploading and reading PDF...";
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/upload-pdf", {
+        const response = await fetch(`${BACKEND_URL}/upload-pdf`, {
             method: "POST",
             body: formData
         });
@@ -44,7 +46,7 @@ async function uploadPDF() {
                 "Characters: " + data.characters + "\n" +
                 "Chunks Created: " + data.chunks_count + "\n\n" +
                 "Preview:\n" + data.preview + "\n\n" +
-                "First Chunk:\n" + data.first_chunk;    
+                "First Chunk:\n" + data.first_chunk;
         } else {
             previewBox.innerText = data.message;
         }
@@ -53,6 +55,7 @@ async function uploadPDF() {
         console.log(error);
     }
 }
+
 async function askAI() {
     const questionInput = document.getElementById("questionInput");
     const answerBox = document.getElementById("aiAnswer");
@@ -67,7 +70,7 @@ async function askAI() {
     answerBox.innerText = "AI is thinking...";
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/ask", {
+        const response = await fetch(`${BACKEND_URL}/ask`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
