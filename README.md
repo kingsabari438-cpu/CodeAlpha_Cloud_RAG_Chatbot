@@ -1,4 +1,4 @@
-# CloudRAG Study Assistant
+# Cloud-Based RAG Chatbot
 
 CloudRAG Study Assistant is an AI-powered document question-answering web application.  
 It allows users to upload a PDF document and ask questions based on the uploaded content.  
