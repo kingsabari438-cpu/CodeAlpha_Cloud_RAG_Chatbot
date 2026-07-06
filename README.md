@@ -1,4 +1,6 @@
-# Cloud-Based RAG Chatbot
+# # CodeAlpha_Cloud_RAG_Chatbot
+
+This project is developed as part of my CodeAlpha Cloud Computing Internship - Task 4: Making a Chatbot.
 
 CloudRAG Study Assistant is an AI-powered document question-answering web application.  
 It allows users to upload a PDF document and ask questions based on the uploaded content.  
